@@ -2,13 +2,13 @@ const toggleTheme = document.getElementById("toggleTheme")
 const rootHtml = document.documentElement
 const acordions = document.querySelectorAll(".accordion__item")
 
-acordions.forEach((buttons) => {
-    buttons.classList.remove('active')
-    let acordion = buttons.firstElementChild
+acordions.forEach((header) => {
+    header.classList.remove('active')
+    let acordion = header.firstElementChild
     
     
     acordion.addEventListener('click', () => {
-            let isActive = buttons.classList.contains('active')
+            let isActive = header.classList.contains('active')
             
             acordions.forEach(acordion => {
                 acordion.classList.remove('active')
@@ -16,7 +16,7 @@ acordions.forEach((buttons) => {
             });
 
             if (!isActive) {
-                buttons.classList.add('active')
+                header.classList.add('active')
             }
             
         })
