@@ -1,5 +1,28 @@
 const toggleTheme = document.getElementById("toggleTheme")
 const rootHtml = document.documentElement
+const acordions = document.querySelectorAll(".accordion__item")
+
+acordions.forEach((buttons) => {
+    buttons.classList.remove('active')
+    let acordion = buttons.firstElementChild
+    
+    
+    acordion.addEventListener('click', () => {
+            let isActive = buttons.classList.contains('active')
+            
+            acordions.forEach(acordion => {
+                acordion.classList.remove('active')
+                
+            });
+
+            if (!isActive) {
+                buttons.classList.add('active')
+            }
+            
+        })
+    
+})
+
 
 
 toggleTheme.addEventListener('click', () => {
